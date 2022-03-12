@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Bài 4</title>
+		<meta charset="utf-8" />
+	</head>
+	<body>
+		<script>
+			function KiemTra()
+			{
+				//lay gia tri tu form
+				//var tdn = document.getElementsByName('TenDangNhap').values;
+				var tdn = f.TenDangNhap.value;
+				var mk = f.MatKhau.value;
+				var nlmk = f.NhapLaiMatKhau.value;
+
+				//thong bao loi khi khong nhap gia tri vao 3 o
+				if(tdn == "" || mk =="" || nlmk == "")
+				{
+					alert('Các ô bắt buộc phải nhập.')
+					return false;
+				}
+				//thong bao loi khi nhap duoi 6 ki tu mat khau
+				if(tdn.length < 6)
+				{
+					alert('Tên đăng nhập phải từ 6 kí tự')
+					return false;
+				}
+				//thong bao loi khi nhap lai mat khau khong khop
+				if(mk != nlmk)
+				{
+					alert('Nhập lại mật khẩu không đúng')
+					return false;
+				}
+				return true;
+
+
+			}
+		</script>
+		<form name="f">
+			<table>
+				<tr>
+					<td>Tên đăng nhập:</td>
+					<td><input type="text" name="TenDangNhap"> (nhiều hơn 6 kí tự)</td>
+				</tr>
+				<tr>
+					<td>Mật Khẩu:</td>
+					<td><input type="password" name="MatKhau"></td>
+				</tr>
+				<tr>
+					<td>Nhập lại Mật Khẩu:</td>
+					<td><input type="password" name="NhapLaiMatKhau"></td>
+				</tr>
+			</table>
+			<button type="submit" onclick="return KiemTra()">Kiểm tra</button>
+		</form>
+	</body>
+</html>
